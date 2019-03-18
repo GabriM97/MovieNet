@@ -1,7 +1,10 @@
 html, body{
-
+  font-family: Arial;
+  height: 100%;
 }
 
+
+/* NAV-BAR */
 #top-nav-bar{
   height: 60px;
   position: absolute;
@@ -33,7 +36,7 @@ html, body{
     left: 240px;
     line-height: 60px;
     padding-left: 10px;
-    z-index: 999;
+    z-index: 100;
 }
 
 #nav-search{
@@ -42,6 +45,13 @@ html, body{
    border-bottom: 1px solid grey;
    color: white;
    outline: none;
+   width: 50%;
+   font-size: 1.1em;
+}
+
+::placeholder{
+  color: rgb(200,200,200);
+  opacity: 1;
 }
 
 #top-nav-body > .user-profile-info{
@@ -73,27 +83,19 @@ html, body{
   height: 40px;
   margin: auto;
   border-radius: 50%;
-  background-position: center !important;
+  background-position: center;
   background-size: cover !important;
 }
 
-
+/* SIDE MENU */
 #side-menu{
   width: 240px;
+  height: 100%;
   position: absolute;
   left: 0;
   top: 60px;
   background-color: #2c3e50;
   bottom: 0px;
-}
-
-#content-view{
- position: absolute;
- left: 240px;
- top: 60px;
- bottom: 0px;
- right: 0px;
- background-color: #34495e;
 }
 
 #side-menu .menu-list{
@@ -115,4 +117,104 @@ html, body{
 
 #side-menu .menu-list .menu-voice.active{
   background-color: #34495e;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#side-menu hr{
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  margin-top: 50px;
+  width: 80%;
+}
+
+/* MAIN-CONTENT */
+#content-view{
+ position: absolute;
+ left: 240px;
+ top: 60px;
+ bottom: 0px;
+ right: 0px;
+ background-color: #34495e;
+ height: 100%;
+}
+
+#content-title{
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+/* GRID SYSTEM */
+* {
+ box-sizing: border-box;
+}
+
+.row{
+  width: 80%;
+  margin: auto;
+}
+
+.row::after {
+ content: "";
+ clear: both;
+ display: block;
+}
+
+.col-1{width: 20%;}
+.col-5{width: 100%;}
+
+[class*="col-"] {
+ float: left;
+ padding: 0px;
+}
+
+
+/* MOVIE */
+.cover-container{
+  /* border: 1px solid white; */
+  width: 180px;
+  height: auto;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.movie-rating{
+  position: absolute;
+  left: 135px;
+  margin-top: -10px;
+  /* border: 1px solid white; */
+  border-radius: 15px;
+  width: 50px;
+  display: none;
+}
+
+.rating-number{
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: white;
+  z-index: 100;
+  padding: 4px 7px;
+}
+
+.movie-image{
+  width: 100%;
+  background-size: cover;
+  /* border: 1px solid red; */
+  box-shadow: 1px 1px 25px 5px rgb(10,10,10);
+}
+
+.movie-title{
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+.movie-category{
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  color: #89b0d8;
 }
