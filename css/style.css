@@ -67,6 +67,8 @@ html, body{
   margin: 0px;
   margin-bottom: -15px;
   margin-top: -20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #top-nav-body .user-profile-info .photo-user{
@@ -89,7 +91,8 @@ html, body{
 }
 
 #side-menu .menu-list{
-  margin-top: 20px;
+  margin-top: 35px;
+  margin-left: 20px;
   list-style: none;
   padding: 0px;
 }
@@ -132,13 +135,13 @@ html, body{
   position: absolute;
   left: 10px;
   right: 20px;
-  margin-top: 20px;
+  margin-top: 50px;
   /* display: none; */
 }
 
 #side-menu #activity-title-container{
   /* border: 1px solid red; */
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 #side-menu #activities-container #activity-title{
@@ -202,6 +205,7 @@ html, body{
   font-weight: bold;
   color: #f74145;
   /* border: 1px solid white; */
+  cursor: pointer;
 }
 
 #side-menu #activities-container .user-activity{
@@ -236,10 +240,11 @@ html, body{
  overflow-y: auto;
 }
 
-#content-title{
+#content-view #content-title{
   color: white;
-  margin-left: 30px;
-  margin-bottom: 10px;
+  margin-left: 50px;
+  margin-bottom: 40px;
+  margin-top: 60px;
 }
 
 /* GRID SYSTEM */
@@ -247,26 +252,25 @@ html, body{
  box-sizing: border-box;
 }
 
-.row{
+/* .row{
   width: 90%;
   margin: auto;
-  /* border: 1px solid red; */
-}
+  border: 1px solid red;
+} */
 
-.row::after {
+/* .row::after {
  content: "";
  clear: both;
  display: block;
- margin-bottom: 10px;
-}
+ margin-bottom: 30px;
+} */
 
-.col-1{width: 20%;}
-.col-5{width: 100%;}
 
-[class*="col-"] {
+.col-1 {
  float: left;
  padding: 0px;
  /* border: 1px solid white; */
+ margin-bottom: 40px;
 }
 
 
@@ -278,6 +282,10 @@ html, body{
   /* margin-left: 50px; */
   margin: 10px auto;
   /* margin-top: 30px; */
+}
+
+#content-view .cover-container .movie-title{
+  margin-bottom: 5px;
 }
 
 #content-view .cover-container .movie-rating{
@@ -319,5 +327,46 @@ html, body{
   margin: 0;
   padding: 0;
   margin-top: 5px;
+  margin-bottom: 10px;
   color: #89b0d8;
 }
+
+
+/* MEDIA QUERY*/
+
+/* DESKTOP */
+@media only screen and (min-width: 1356px) {
+  .col-1{
+    width: 20%;
+  }
+}
+
+/* TABLET */
+@media only screen and (max-width: 1355px) {
+  .col-1{
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 1120px) {
+  .col-1{
+    width: 33.33%;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .col-1{
+    width: 50%;
+  }
+}
+
+/* MOBILE */
+@media only screen and (max-width: 768px) {
+  .col-1{
+    width: 100%;
+  }
+}
+
+/* @media only screen and (min-width: 768px) {
+
+} */
