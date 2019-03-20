@@ -1,6 +1,5 @@
 html, body{
   font-family: Arial;
-  height: 100%;
 }
 
 
@@ -64,19 +63,10 @@ html, body{
   text-align: center;
 }
 
-
 #top-nav-body .user-profile-info .user-nickname{
   margin: 0px;
   margin-bottom: -15px;
   margin-top: -20px;
-}
-
-#top-nav-body .user-profile-info img{
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  margin-top: -5px;
-  /* border-radius: 20px; */
 }
 
 #top-nav-body .user-profile-info .photo-user{
@@ -91,7 +81,6 @@ html, body{
 /* SIDE MENU */
 #side-menu{
   width: 240px;
-  height: 100%;
   position: absolute;
   left: 0;
   top: 60px;
@@ -116,7 +105,7 @@ html, body{
   cursor: pointer;
 }
 
-#side-menu .menu-list .menu-voice:hover::after{
+#side-menu .menu-list .menu-voice.active::after, #side-menu .menu-list .menu-voice:hover::after {
   position: absolute;
   float: right;
   right: 15px;
@@ -144,6 +133,7 @@ html, body{
   left: 10px;
   right: 20px;
   margin-top: 20px;
+  /* display: none; */
 }
 
 #side-menu #activity-title-container{
@@ -178,6 +168,61 @@ html, body{
   color: white;
 }
 
+#side-menu #activities-container .activity-container {
+ /* border: 1px solid white; */
+ color: white;
+ font-size: 0.8em;
+ padding: 1em;
+ margin-bottom: -40px;
+}
+
+#side-menu #activities-container .photo-user{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover !important;
+  display: inline-block;
+}
+
+#side-menu #activities-container .activity-info{
+  display: inline-block;
+  /* border: 1px solid white; */
+  position: relative;
+  left: 45px;
+  top: -35px;
+  /* margin-top: -20px; */
+}
+
+#side-menu #activities-container .user-nickname{
+  /* margin: 0; */
+  /* padding: 0; */
+  /* margin-left: 50px; */
+  /* margin-top: -30px; */
+  font-weight: bold;
+  color: #f74145;
+  /* border: 1px solid white; */
+}
+
+#side-menu #activities-container .user-activity{
+  /* margin: 0; */
+  /* margin-top: -30px; */
+  font-style: italic;
+}
+
+#side-menu #activities-container .activity-movie-title{
+  color: #f74145;
+  font-style: italic;
+}
+
+#side-menu #activities-container .activity-time{
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+  color: grey;
+}
+
+
 /* MAIN-CONTENT */
 #content-view{
  position: absolute;
@@ -186,7 +231,9 @@ html, body{
  bottom: 0px;
  right: 0px;
  background-color: #222b32;
- height: 100%;
+ /* height: 100%; */
+ overflow: hidden;
+ overflow-y: auto;
 }
 
 #content-title{
@@ -201,7 +248,7 @@ html, body{
 }
 
 .row{
-  width: 80%;
+  width: 90%;
   margin: auto;
   /* border: 1px solid red; */
 }
