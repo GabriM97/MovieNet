@@ -14,7 +14,7 @@ html, body{
   /* border: 1px solid black; */
 }
 
-#logo-top{
+#top-nav-bar #logo-top{
   width: 240px;
   height: 60px;
   background-color: #f73744;
@@ -28,7 +28,7 @@ html, body{
   font-weight: bold;
 }
 
-#top-nav-body{
+#top-nav-bar #top-nav-body{
     position: absolute;
     height: 60px;
     top: 0px;
@@ -39,7 +39,7 @@ html, body{
     z-index: 100;
 }
 
-#nav-search{
+#top-nav-bar #nav-search{
   background: #fe4250;
    border: none;
    border-bottom: 1px solid grey;
@@ -49,7 +49,7 @@ html, body{
    font-size: 1.1em;
 }
 
-#top-nav-body ::placeholder{
+#top-nav-bar #top-nav-body ::placeholder{
   color: rgb(200,200,200);
   opacity: 1;
 }
@@ -108,19 +108,18 @@ html, body{
   cursor: pointer;
 }
 
-#side-menu .menu-list .menu-voice.active::after, #side-menu .menu-list .menu-voice:hover::after {
+#side-menu .menu-list .menu-voice.active{
+  background-color: #222b32;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#side-menu .menu-voice.active::after, #side-menu .menu-voice:hover::after {
   position: absolute;
   float: right;
   right: 15px;
   font-weight: bold;
   content: "⮞";
-}
-
-
-#side-menu .menu-list .menu-voice.active{
-  background-color: #222b32;
-  font-size: 1.2em;
-  font-weight: bold;
 }
 
 #side-menu hr{
@@ -198,10 +197,6 @@ html, body{
 }
 
 #side-menu #activities-container .user-nickname{
-  /* margin: 0; */
-  /* padding: 0; */
-  /* margin-left: 50px; */
-  /* margin-top: -30px; */
   font-weight: bold;
   color: #f74145;
   /* border: 1px solid white; */
@@ -273,6 +268,10 @@ html, body{
  margin-bottom: 40px;
 }
 
+.col-1::after{
+  clear: both;
+}
+
 
 /* MOVIE */
 #content-view .cover-container{
@@ -282,10 +281,6 @@ html, body{
   /* margin-left: 50px; */
   margin: 10px auto;
   /* margin-top: 30px; */
-}
-
-#content-view .cover-container .movie-title{
-  margin-bottom: 5px;
 }
 
 #content-view .cover-container .movie-rating{
@@ -319,11 +314,12 @@ html, body{
   margin: 0;
   padding: 0;
   margin-top: 15px;
+  margin-bottom: 5px;
   color: white;
   font-weight: bold;
 }
 
-.cover-container .movie-category{
+#content-view .cover-container .movie-category{
   margin: 0;
   padding: 0;
   margin-top: 5px;
@@ -336,33 +332,34 @@ html, body{
 
 /* DESKTOP */
 @media only screen and (min-width: 1356px) {
-  .col-1{
+  #content-view .col-1{
     width: 20%;
   }
 }
 
 /* TABLET */
 @media only screen and (max-width: 1355px) {
-  .col-1{
+  #content-view .col-1{
     width: 25%;
+    /* margin-left: -1px; */
   }
 }
 
 @media only screen and (max-width: 1120px) {
-  .col-1{
+  #content-view .col-1{
     width: 33.33%;
   }
 }
 
 @media only screen and (max-width: 915px) {
-  .col-1{
+  #content-view .col-1{
     width: 50%;
   }
 }
 
 /* MOBILE */
 @media only screen and (max-width: 768px) {
-  .col-1{
+  #content-view .col-1{
     width: 100%;
   }
 }
