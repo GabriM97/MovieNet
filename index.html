@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>MOVIENET</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
 
     <!-- NAV-BAR -->
     <div id="top-nav-bar">
-      <div id="logo-top">MOVIENET</div>
+      <div id="logo-top"> <img id="logo-nav-bar" src="assets/img/logo.png" alt="Movienet logo"> </div>
       <div id="top-nav-body">
         <input type="text" class="nav-search" placeholder="Film title ...">
         <div class="user-profile-info">
           <p class="user-nickname">User Nickname</p>
-          <div class="photo-user" style="background: url('img/profile_img.jpg');"></div>
+          <div class="photo-user" style="background: url('assets/img/profile_img.jpg');"></div>
         </div>
       </div>
     </div>
@@ -30,10 +30,10 @@
         <div class="menu-voice">Watch Later</div>
       </div>
 
-      <hr>
-
       <!-- USERS ACTIVITIES -->
       <div id="activities-container">
+        <hr>
+
         <div id="activity-title-container">
           <h4 id="activity-title">Last Activity</h4>
           <div id="activity-number-container"> <p id="number-activity">3</p> </div>
@@ -41,7 +41,7 @@
 
         <!-- ACTIVITY 1-->
         <div class="activity-container">
-          <div class="photo-user" style="background: url('img/profile_img.jpg');"></div>
+          <div class="photo-user" style="background: url('assets/img/profile_img.jpg');"></div>
           <div class="activity-info">
             <span class="user-nickname">User Nickname</span>
             <span class="user-activity">wants to be your friend</span>
@@ -51,7 +51,7 @@
 
         <!-- ACTIVITY 2-->
         <div class="activity-container">
-          <div class="photo-user" style="background: url('img/profile_img.jpg');"></div>
+          <div class="photo-user" style="background: url('assets/img/profile_img.jpg');"></div>
           <div class="activity-info">
             <span class="user-nickname">User Nickname</span>
             <span class="user-activity">has recommended you: <span class="activity-movie-title">Jurassic World</span> </span>
@@ -61,7 +61,7 @@
 
         <!-- ACTIVITY 3-->
         <div class="activity-container">
-          <div class="photo-user" style="background: url('img/profile_img.jpg');"></div>
+          <div class="photo-user" style="background: url('assets/img/profile_img.jpg');"></div>
           <div class="activity-info">
             <span class="user-nickname">User Nickname</span>
             <span class="user-activity">has recommended you <span class="activity-movie-title">Gravity</span> </span>
@@ -75,15 +75,15 @@
     <!-- MAIN CONTENT -->
     <div id="content-view">
 
-      <div id="main-search">
-        <h3 id="search-title">Enter Film title to search</h3>
+      <!-- <div id="main-search">
+        <h3 id="search-title">Enter Movie title to search</h3>
         <input type="text" class="nav-search" placeholder="Film title ...">
-      </div>
+      </div> -->
 
         <!-- <div class="col-1">
           <div id="movie1" class="cover-container">
             <div class="movie-rating"><p class="rating-number">9.0</p></div>
-            <a href="#"><img class="movie-image" src="img/movie1.jpg" alt="movie 1"></a>
+            <a href="#"><img class="movie-image" src="assets/img/movie1.jpg" alt="movie 1"></a>
             <h3 class="movie-title">Game of Thrones</h3>
             <p class="movie-category">Fantasy, Action, Medieval</p>
           </div>
@@ -92,6 +92,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>
