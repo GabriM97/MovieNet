@@ -94,7 +94,7 @@ function searchMovies(search, top_nav_search){
   })
 
   .done(function(response){
-    console.log(response);
+    // console.log(response);
 
     $("#top-nav-bar #top-nav-body").append(top_nav_search);
 
@@ -114,7 +114,7 @@ function searchMovies(search, top_nav_search){
         '<div class="col-1"> \
           <div id="'+ movie.imdbID +'" class="cover-container"> \
             <div class="movie-rating"><p class="rating-number">'+ movie.Year.replace("–"," ") +'</p></div> \
-            <a href="#"><img class="movie-image" src="'+ movie.Poster +'" alt="'+ movie.Poster +'"></a> \
+            <a href="#"><img class="movie-image" src="'+ movie.Poster +'" alt="'+ movie.Poster +'" onerror="imgerror(this);"></a> \
             <h3 class="movie-title">'+ movie.Title +'</h3> \
             <p class="movie-category">'+ movie.Type +'</p> \
           </div> \
@@ -128,4 +128,10 @@ function searchMovies(search, top_nav_search){
   .fail(function(){
     console.log("API ERROR!");
   });
+}
+
+function imgerror(image){
+  image.onerror="";
+  image.src = "assets/img/img_not_available.png";
+  console.log(image + "IMAGE LINK ERROR!");
 }
