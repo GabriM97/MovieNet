@@ -102,25 +102,28 @@ function searchMovies(search, top_nav_search){
     main_content.empty();
     main_content.append("<h2 id=\"content-subtitle\">Results for: "+search+"</h2>")
 
-    var results_row = '<div class="row list-results"></div>'
-    main_content.append(results_row);
+    var results_list = '<div id="list-results"></div>'
+    main_content.append(results_list);
     if(response.Response == "False"){
-      $(".row.list-results").append("<h2 id=\"content-subtitle\">MOVIE NOT FOUND</h2>");
+      $("#list-results").append("<h2 id=\"content-subtitle\">MOVIE NOT FOUND</h2>");
       return false;
     }
     response.Search.forEach(function(movie){
       if(movie.Poster != 'N/A'){
+
+        console.log($(document).width());
+
         var movie =
         '<div class="col-1"> \
           <div id="'+ movie.imdbID +'" class="cover-container"> \
             <div class="movie-rating"><p class="rating-number">'+ movie.Year.replace("–"," ") +'</p></div> \
-            <a href="#"><img class="movie-image" src="'+ movie.Poster +'" alt="'+ movie.Poster +'" onerror="imgerror(this);"></a> \
+            <a href="#"><img class="movie-image" src="'+ movie.Poster +'" alt="'+ movie.Poster +'" onerror="imgError(this);"></a> \
             <h3 class="movie-title">'+ movie.Title +'</h3> \
             <p class="movie-category">'+ movie.Type +'</p> \
           </div> \
         </div>';
 
-        $(".row.list-results").append(movie);
+        $("#list-results").append(movie);
       }
     });
   })
@@ -130,8 +133,8 @@ function searchMovies(search, top_nav_search){
   });
 }
 
-function imgerror(image){
-  image.onerror="";
+// -- HANDLE IMG ERROR --
+function imgError(image){
   image.src = "assets/img/img_not_available.png";
   console.log(image + "IMAGE LINK ERROR!");
 }
