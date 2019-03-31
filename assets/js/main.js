@@ -108,11 +108,28 @@ function searchMovies(search, top_nav_search){
       $("#list-results").append("<h2 id=\"content-subtitle\">MOVIE NOT FOUND</h2>");
       return false;
     }
+
+    var row = '<div class="row"></div>';
+    var max_elements = 0;
+    var docs_width = $(document).width();
+    if(docs_width <= 768){
+      max_elements = 1;
+    }else if(docs_width <= 915){
+      max_elements = 2;
+    }else if(docs_width <= 1120){
+      max_elements = 3;
+    }else if(docs_width <= 1355){
+      max_elements = 4;
+    }else  max_elements = 5;
+
+    var cnt = 0;
+    $("#list-results").append(row);
     response.Search.forEach(function(movie){
       if(movie.Poster != 'N/A'){
-
-        console.log($(document).width());
-
+        if(cnt >= max_elements){
+          cnt = 0;
+          $("#list-results").append(row);
+        }
         var movie =
         '<div class="col-1"> \
           <div id="'+ movie.imdbID +'" class="cover-container"> \
@@ -123,7 +140,8 @@ function searchMovies(search, top_nav_search){
           </div> \
         </div>';
 
-        $("#list-results").append(movie);
+        $(".row").last().append(movie);
+        cnt++;
       }
     });
   })
@@ -136,5 +154,4 @@ function searchMovies(search, top_nav_search){
 // -- HANDLE IMG ERROR --
 function imgError(image){
   image.src = "assets/img/img_not_available.png";
-  console.log(image + "IMAGE LINK ERROR!");
 }
